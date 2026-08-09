@@ -1,0 +1,18 @@
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - name: Build
+        run: cmake -B build -S . && cmake --build build
+      - name: Run public tests
+        env:
+            SAVE_SCORE_DB: ~/score.db
+        run: python3 tests/run_tests.py build/hw-01-tic-tac-toe tests "${{ github.event.pull_request.user.login }}" 1

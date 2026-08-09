@@ -1,0 +1,51 @@
+ . | . | .
+---+---+---
+ . | . | .
+---+---+---
+ . | . | .
+Player X:  . | . | .
+---+---+---
+ . | . | .
+---+---+---
+ . | . | X
+Player O: Player O: Player O: Player O: Player O: Player O: Player O: Player O: Player O:  . | . | .
+---+---+---
+ O | . | .
+---+---+---
+ . | . | X
+Player X: Player X: Player X: Player X: Player X: Player X:  . | X | .
+---+---+---
+ O | . | .
+---+---+---
+ . | . | X
+Player O: Player O: Player O: Player O: Player O: Player O: Player O: Player O: Player O: Player O: Player O:  . | X | O
+---+---+---
+ O | . | .
+---+---+---
+ . | . | X
+Player X: Player X: Player X: Player X: Player X: Player X: Player X: Player X: Player X: Player X: Player X:  . | X | O
+---+---+---
+ O | . | X
+---+---+---
+ . | . | X
+Player O: Player O: Player O: Player O: Player O: Player O: Player O: Player O: Player O:  O | X | O
+---+---+---
+ O | . | X
+---+---+---
+ . | . | X
+Player X:  O | X | O
+---+---+---
+ O | X | X
+---+---+---
+ . | . | X
+Player O:  O | X | O
+---+---+---
+ O | X | X
+---+---+---
+ . | O | X
+Player X: Player X: Player X: Player X: Player X: Player X: Player X: Player X: Player X: Tie
+ O | X | O
+---+---+---
+ O | X | X
+---+---+---
+ X | O | X

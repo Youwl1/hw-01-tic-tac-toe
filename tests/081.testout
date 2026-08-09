@@ -1,0 +1,51 @@
+ . | . | .
+---+---+---
+ . | . | .
+---+---+---
+ . | . | .
+Player X: Player X: Player X: Player X: Player X: Player X: Player X:  . | X | .
+---+---+---
+ . | . | .
+---+---+---
+ . | . | .
+Player O: Player O: Player O: Player O: Player O: Player O: Player O: Player O:  . | X | .
+---+---+---
+ . | . | .
+---+---+---
+ . | O | .
+Player X:  . | X | .
+---+---+---
+ . | . | .
+---+---+---
+ . | O | X
+Player O:  O | X | .
+---+---+---
+ . | . | .
+---+---+---
+ . | O | X
+Player X:  O | X | X
+---+---+---
+ . | . | .
+---+---+---
+ . | O | X
+Player O:  O | X | X
+---+---+---
+ . | O | .
+---+---+---
+ . | O | X
+Player X:  O | X | X
+---+---+---
+ . | O | .
+---+---+---
+ X | O | X
+Player O:  O | X | X
+---+---+---
+ O | O | .
+---+---+---
+ X | O | X
+Player X: Player X: Player X: Player X: Player X: Player X won
+ O | X | X
+---+---+---
+ O | O | X
+---+---+---
+ X | O | X
