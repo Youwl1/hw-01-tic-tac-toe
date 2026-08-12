@@ -40,7 +40,7 @@ int main() {
                 /* базовый алгоритм */
                 int p;
                 do {
-                    std::print("Player {}: ", current_player);
+                    std::println("Player {}: ", current_player);
                     std::cin >> p;
                 }while (p < 1 || p > 9 || v[p - 1] != '.');
                 v[p - 1] = current_player;
