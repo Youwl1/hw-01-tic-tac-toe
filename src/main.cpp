@@ -18,7 +18,7 @@ int main() {
         };
         /*вывел начальную доску*/
             std::vector<char> v(9,'.');
-            bool tie1{true};
+            bool tie{true};
             std::println(R"({} | {} | {}
 ---+---+---
 {} | {} | {}
@@ -28,30 +28,37 @@ int main() {
 
 
             for (int i = 0; i < 9; i++){
-                /* Если ходит player X*/
+                /* мусорное значение*/
+                char current_player = '.';
+                /* проверка на текущего пользователя*/
                 if (i % 2 == 0){
-                    char current_player = 'X';
-                    int p;
-                    do {
-                        std::cout << "Player X: ";
-                        std::cin >> p;
-                    }while (p < 1 or p > 9 or v[p - 1] != '.');
-                    v[p - 1] = 'X';
+                    current_player = 'X';
+                }
+                else {
+                    current_player = 'O';
+                }
+                /* базовый алгоритм */
+                int p;
+                do {
+                    std::print("Player {}: ", current_player);
+                    std::cin >> p;
+                }while (p < 1 || p > 9 || v[p - 1] != '.');
+                v[p - 1] = current_player;
 
-                    /* проверка на выигрышную позицию*/
-                    bool win {false};
-                    for(const auto& line : wins){
-                        if((v[line[0]] == current_player) && (v[line[1]] == current_player) && (v[line[2]] == current_player)){
-                            win = true;
-                            break;
-                        }
+                /* проверка на выигрышную позицию*/
+                bool win {false};
+                for(const auto& line : wins){
+                    if((v[line[0]] == current_player) && (v[line[1]] == current_player) && (v[line[2]] == current_player)){
+                        win = true;
+                        break;
                     }
+                }
                     
                     /* если выиграл - вывожу кто и доску*/
-                    if(win){
-                        tie1 = false;
-                        std::println("Player {} won", current_player);
-                        std::println(R"( {} | {} | {}
+                if(win){
+                    tie = false;
+                    std::println("Player {} won", current_player);
+                    std::println(R"( {} | {} | {}
 ---+---+---
 {} | {} | {}
 ---+---+---
@@ -66,45 +73,8 @@ int main() {
 {} | {} | {})",
             v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7], v[8]);
                     }
-                else {  /*ЭТО ИГРОК "O"*/
-
-
-                    int p1;
-                    char current_player = 'O';
-                    do {
-                        std::cout << "Player O: ";
-                        std::cin >> p1;
-                    }while (p1 < 1 or p1 > 9 or v[p1 - 1] != '.');
-                    v[p1 - 1] = 'O';
-
-                    bool win {false};
-                    for(const auto& line : wins){
-                        if((v[line[0]] == current_player) && (v[line[1]] == current_player) && (v[line[2]] == current_player)){
-                            win = true;
-                            break;
-                        }
-                    }
-
-                    if (win) {
-                        tie1 = false;
-                        std::println("Player {} won", current_player);
-                        std::println(R"( {} | {} | {}
----+---+---
-{} | {} | {}
----+---+---
-{} | {} | {})",
-            v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7], v[8]);
-                        break;
-                    }
-                std::println(R"( {} | {} | {}
----+---+---
-{} | {} | {}
----+---+---
-{} | {} | {})",
-            v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7], v[8]);       
-                }
-            }
-            if (tie1 == true){
+            /*Если в результате игры не нашлось победителя - вывожу ничью и доску*/
+            if (tie == true){
             std::println("Tie");
             std::println(R"( {} | {} | {}
 ---+---+---
@@ -113,5 +83,4 @@ int main() {
 {} | {} | {})",
             v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7], v[8]);
             }
-
 }
